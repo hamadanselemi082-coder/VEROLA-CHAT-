@@ -1,0 +1,610 @@
+*{
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+
+body{
+    margin:0;
+    padding:0;
+    font-family:Arial, sans-serif;
+    background:linear-gradient(#eaf6ff,#ffffff);
+    color:#222;
+}
+
+
+/* HEADER */
+
+header{
+    text-align:center;
+    padding:20px;
+    background:linear-gradient(135deg,#008cff,#00c6ff);
+    color:white;
+}
+
+
+.logo{
+    width:100px;
+    height:100px;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+
+header h1{
+    margin:10px 0;
+    font-size:32px;
+}
+
+
+header h2{
+    margin:5px;
+}
+
+
+
+
+/* TOP CARDS */
+
+.stats-row {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin: 20px 10px;
+}
+
+.stat-card {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 105px;
+    padding: 10px;
+    border-radius: 15px;
+    color: white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.stat-card .icon {
+    font-size: 22px;
+}
+
+.stat-card h4 {
+    margin: 0;
+    font-size: 11px;
+}
+
+.stat-card p {
+    margin: 4px 0 0;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+
+.balance-card {
+    background: #2196f3;
+}
+
+.withdraw-card {
+    background: #ff9800;
+}
+
+.online-card {
+    background: #16a34a;
+}
+
+
+
+.online{
+    animation:pulse 1s infinite;
+}
+
+
+@keyframes pulse{
+
+50%{
+    transform:scale(1.1);
+}
+
+}
+
+
+
+/* USERS */
+
+.title{
+    text-align:center;
+    color:#0077cc;
+}
+
+
+
+.users{
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+    padding:20px;
+
+}
+
+
+
+.user{
+
+    background:white;
+    padding:15px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 5px 15px #aaa;
+
+}
+
+
+
+.user img{
+
+    width:90px;
+    height:90px;
+    border-radius:50%;
+    object-fit:cover;
+
+}
+
+
+
+.status{
+
+    color:green;
+    font-weight:bold;
+
+}
+
+
+
+.user b{
+
+    display:block;
+    color:#009900;
+    margin:10px;
+
+}
+
+
+
+button{
+
+    background:#008cff;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    border-radius:20px;
+    cursor:pointer;
+    font-weight:bold;
+
+}
+
+
+button:hover{
+
+    background:#005bbb;
+
+}
+
+
+
+
+/* WHATSAPP */
+
+.contact{
+
+    text-align:center;
+    padding:20px;
+    background:rgba(255,255,255,0.7);
+    margin-top:20px;
+
+}
+
+
+
+.whatsapp{
+
+    width:60px;
+
+}
+
+
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+.users{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+
+.card{
+
+width:100%;
+
+}
+
+
+}/* Floating WhatsApp */
+
+.floating-whatsapp{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    width:65px;
+    height:65px;
+    background:#25D366;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    box-shadow:0 6px 15px rgba(0,0,0,0.3);
+    animation:float 2s infinite;
+    z-index:999;
+}
+
+.floating-whatsapp img{
+    width:38px;
+    height:38px;
+}
+
+@keyframes float{
+    0%{transform:translateY(0);}
+    50%{transform:translateY(-8px);}
+    100%{transform:translateY(0);}
+}/* HERO SECTION */
+
+.hero{
+    background:linear-gradient(135deg,#0d6efd,#48c6ef);
+    color:white;
+    text-align:center;
+    padding:40px 20px;
+    margin:20px;
+    border-radius:25px;
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+
+.hero h2{
+    font-size:32px;
+    margin-bottom:10px;
+}
+
+.hero p{
+    font-size:18px;
+    line-height:1.6;
+    max-width:700px;
+    margin:auto;
+}
+
+.join-btn{
+    display:inline-block;
+    margin-top:20px;
+    background:#28a745;
+    color:white;
+    text-decoration:none;
+    padding:15px 35px;
+    border-radius:30px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.join-btn:hover{
+    background:#218838;
+    transform:scale(1.05);
+}/* NAVIGATION */
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 20px;
+    background:rgba(255,255,255,0.7);
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 2px 10px rgba(0,0,0,.1);
+}
+
+.brand{
+    font-size:24px;
+    font-weight:bold;
+    color:#007BFF;
+}
+
+.menu{
+    display:flex;
+    gap:18px;
+}
+
+.menu a{
+    text-decoration:none;
+    color:#333;
+    font-weight:bold;
+}
+
+.menu a:hover{
+    color:#007BFF;
+}
+
+@media(max-width:700px){
+
+.navbar{
+    flex-direction:column;
+    gap:10px;
+}
+
+.menu{
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+}.chat-header{
+    background:white;
+    padding:15px;
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.chat-header a{
+    text-decoration:none;
+    font-size:25px;
+}
+
+.profile{
+    display:flex;
+    gap:10px;
+    align-items:center;
+}
+
+.avatar{
+    font-size:35px;
+}
+
+.profile h3{
+    margin:0;
+}
+
+.profile p{
+    margin:0;
+    color:green;
+}
+
+
+.chat-area{
+    padding:20px;
+    height:400px;
+}
+
+
+.message{
+    padding:12px;
+    margin:10px;
+    border-radius:15px;
+    max-width:70%;
+}
+
+.received{
+    background:white;
+}
+
+
+.typing{
+    color:gray;
+    font-style:italic;
+}
+
+
+.reply-box{
+    position:fixed;
+    bottom:0;
+    width:100%;
+    display:flex;
+    padding:10px;
+    background:white;
+}
+
+.reply-box input{
+    flex:1;
+    padding:12px;
+    border-radius:20px;
+    border:1px solid #ccc;
+}
+
+.reply-box button{
+    margin-left:8px;
+    border:none;
+    background:#2196f3;
+    color:white;
+    padding:12px 20px;
+    border-radius:20px;
+}.footer{
+    background:#0b3d91;
+    color:white;
+    text-align:center;
+    padding:30px 20px;
+    margin-top:40px;
+}
+
+.footer h3{
+    font-size:24px;
+    margin-bottom:10px;
+}
+
+.footer p{
+    font-size:14px;
+    line-height:1.5;
+}
+
+.footer-links{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin:20px 0;
+}
+
+.footer-links a{
+    color:white;
+    text-decoration:none;
+    font-size:14px;
+}
+
+.whatsapp-footer{
+    display:inline-block;
+    background:#25D366;
+    color:white;
+    padding:12px 20px;
+    border-radius:25px;
+    text-decoration:none;
+    margin:15px 0;
+    font-weight:bold;
+}
+
+.footer hr{
+    border:0;
+    border-top:1px solid rgba(255,255,255,0.3);
+    margin:20px 0;
+}html, body{
+    background:#eaf6ff !important;
+}body{
+    background:#eaf6ff !important;
+}
+
+.users,
+.stats-row,
+.bonus-section{
+    background:transparent;
+}.bonus-section{
+    margin:30px 15px;
+    padding:25px;
+    text-align:center;
+    background:rgba(255,255,255,0.7);
+    border-radius:25px;
+}
+
+
+.bonus-chat{
+    display:none;
+    margin-top:20px;
+    background:#eaf6ff;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+
+.chat-top{
+    background:#008cff;
+    color:white;
+    padding:15px;
+    text-align:left;
+}
+
+
+.chat-body{
+    padding:15px;
+    min-height:250px;
+}
+
+
+.chat-message{
+    padding:12px;
+    border-radius:15px;
+    margin:10px 0;
+    max-width:75%;
+}
+
+
+.receive{
+    background:white;
+    text-align:left;
+}
+
+
+.sent{
+    background:#dcf8c6;
+    margin-left:auto;
+}
+
+
+.typing{
+    color:gray;
+    font-style:italic;
+}
+
+
+.chat-input{
+    display:flex;
+    padding:10px;
+    background:white;
+}
+
+
+.chat-input input{
+    flex:1;
+    padding:12px;
+    border-radius:25px;
+    border:1px solid #ccc;
+}
+
+
+.chat-input button{
+    margin-left:8px;
+}.withdraw-box{
+    display:none;
+    background:white;
+    margin:20px;
+    padding:25px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,0.15);
+}
+
+
+.withdraw-box h3{
+    color:#ff9800;
+}
+
+
+.withdraw-box a{
+    display:inline-block;
+    background:#008cff;
+    color:white;
+    padding:12px 25px;
+    border-radius:25px;
+    text-decoration:none;
+    margin-top:15px;
+}.online-dot{
+    display:inline-block;
+    width:10px;
+    height:10px;
+    background:#16a34a;
+    border-radius:50%;
+    margin-right:5px;
+    animation:pulse 1.5s infinite;
+}
+
+
+@keyframes pulse{
+    0%{
+        transform:scale(1);
+        opacity:1;
+    }
+
+    50%{
+        transform:scale(1.5);
+        opacity:0.5;
+    }
+
+    100%{
+        transform:scale(1);
+        opacity:1;
+    }
+}
