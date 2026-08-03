@@ -378,18 +378,24 @@ function openBonusChat(){
 }
 
 
+let bonusMessageSent = false;
+let bonusReplySent = false;
+
 function sendMessage(){
 
+if(bonusMessageSent){
+    alert("Umetuma ujumbe wako wa Welcome Bonus tayari 😊");
+    return;
+}
+
 let input = document.getElementById("userMessage");
-let text = input.value;
+let text = input.value.trim();
 
 if(text==""){
     return;
 }
 
-
 let chat = document.querySelector(".chat-body");
-
 
 chat.innerHTML += `
 <div class="chat-message sent">
@@ -397,8 +403,11 @@ ${text}
 </div>
 `;
 
-
 input.value="";
+
+bonusMessageSent = true;
+
+input.disabled = true;
 
 
 chat.innerHTML += `
@@ -407,25 +416,35 @@ Emma is typing...
 </div>
 `;
 
-
 setTimeout(function(){
+
+let typing = document.querySelector(".typing");
+if(typing){
+typing.remove();
+}
+
+if(!bonusReplySent){
 
 chat.innerHTML += `
 <div class="chat-message receive">
-asante sana nimefurahi kupata teacher in everning nitakuwa na wakati wakujifuza utanipa mafunzo na i will pay $10 kwa kunipa mafunzo mazuri tuonane badae i'm happy😊 the company is good and pays 
+Asante sana 😊 nimefurahi kupata teacher. Nitakuwa na wakati wa kujifunza. Utanipa mafunzo mazuri na nitalipa $10 kwa mafunzo mazuri. Tuonane baadaye, I'm happy 😊 The company is good and pays.
 </div>
 `;
 
+bonusReplySent = true;
+
+}
+
 },2000);
 
+}
 
-}function finishBonus(){
+function finishBonus(){
 
 let balance = document.getElementById("balance");
 
 let start = 0;
 let end = 25000;
-let speed = 50;
 
 let timer = setInterval(function(){
 
@@ -437,10 +456,12 @@ if(start >= end){
 clearInterval(timer);
 }
 
-}, speed);
+},50);
 
 
 document.getElementById("bonusChat").style.display="none";
+
+alert("🎉 Hongera! Umepokea Bonus ya 25,000 TSh");
 
 }
 
